@@ -1,0 +1,2 @@
+# LeetCode
+Self -learning leetcode
