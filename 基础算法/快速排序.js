@@ -81,7 +81,7 @@ function newQuick(array, left, right) {
         i++;
       }
       //4. 移动右指针直到找到一个比主元小的值 (j元素 > 中间值)
-      while (array[j] > pivot) {
+      while (array[j] > pivot)  {
         j--;
       }
       //5.  三四得到的结果可能是: 最后 i指针 指向的pivot. j指针 不动指向最后位置
