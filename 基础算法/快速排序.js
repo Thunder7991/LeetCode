@@ -1,21 +1,21 @@
 //复杂度 O(nlog(n))
 
-let Compare = {
+ let Compare = {
   LESS_THAN: -1,
   BIGGER_THAN: 1,
   EQUALS: 0,
 };
-function swap(array, a, b) {
+ function swap(array, a, b) {
   [array[a], array[b]] = [array[b], array[a]];
 }
-function defaultCompare(a, b) {
+ function defaultCompare(a, b) {
   if (a === b) {
     return Compare.EQUALS;
   }
   return a < b ? Compare.LESS_THAN : Compare.BIGGER_THAN;
 }
 quickSort([3, 5, 1, 6, 4, 7, 2]);
-function quickSort(array, compareFn = defaultCompare) {
+ function quickSort(array, compareFn = defaultCompare) {
   return quick(array, 0, array.length - 1, compareFn);
 }
 function quick(array, left, right, compareFn) {
@@ -63,9 +63,16 @@ function partition(array, left, right, compareFn) {
   return i;
 }
 
+module.exports = {
+  Compare,
+  swap,
+  defaultCompare,
+  quickSort,
+   DOES_NOT_EXIST : -1
+}
 // ===> 递归算法重写
 
-function newQuick(array, left, right) {
+  function newQuick(array, left, right) {
   let index;
   //获取中间值
   if (array.length > 1) {
@@ -76,7 +83,7 @@ function newQuick(array, left, right) {
     let j = right;
     //6. 一直循环下去, 直到i>j
     while (i <= j) {
-      //3. 移动左指针知道找到比主元大的值 (i元素 < 中间值)
+      //3. 移动左指针直到找到比主元大的值 (i元素 < 中间值)
       while (array[i] < pivot) {
         i++;
       }
